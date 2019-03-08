@@ -1,0 +1,41 @@
+spring:
+  resources:
+    #设置静态页面,也就是html页面
+    # 默认值为 classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/templates/thymeleaf/
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_library?useSSL=false&characterEncoding=utf-8
+    username: root
+    password: "000411"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  freemarker:
+    # 设置模板后缀名
+    suffix: .ftl
+    # 设置文档类型
+    content-type: text/html
+    # 设置页面编码格式
+    charset: UTF-8
+    # 设置页面缓存
+    cache: false
+    # 设置ftl文件路径
+    template-loader-path:
+      - classpath:/templates
+    # 设置静态文件路径，js,css等
+    mvc:
+      static-path-pattern: /static/**
+  thymeleaf:
+    #后缀名
+    suffix: .html
+    #设置编码格式
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+    prefix: classpath:/templates/thymeleaf/
+    mode: HTML
+
+test:
+  name: springboot
+  domain: www.baidu.com
+
+
